@@ -10,7 +10,11 @@ public class HelloActionImpl implements Action {
     @Override
     public void fire() {
         System.out.println("what is your name? ");
-        nameProvided = scanner.next();
+        nameProvided = getProvidedName();
         System.out.println("hello " + nameProvided);
+    }
+
+    private String getProvidedName() {
+        return scanner.next();
     }
 }

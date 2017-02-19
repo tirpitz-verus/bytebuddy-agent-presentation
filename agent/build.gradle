@@ -10,7 +10,7 @@ repositories {
 }
 
 dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.11'
+    compile group: 'net.bytebuddy', name: 'byte-buddy-dep', version: '1.6.8'
 }
 
 jar {
@@ -19,5 +19,9 @@ jar {
                 "Premain-Class": "mlesiewski.agent.Agent",
                 "Agent-Class": "mlesiewski.agent.Agent"
         )
+    }
+
+    from {
+        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
     }
 }
