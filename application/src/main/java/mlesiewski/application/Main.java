@@ -1,18 +1,19 @@
 package mlesiewski.application;
 
-import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
 
-    public static void main(String[] args) throws IOException {
-        Scanner scanner = new Scanner(System.in);
+    private Scanner scanner = new Scanner(System.in);
+
+    public static void main(String[] args) {
+        Main main = new Main();
         while (true) {
-            runCommand(scanner);
+            main.runCommand();
         }
     }
 
-    private static void runCommand(Scanner scanner) {
+    void runCommand() {
         System.out.print("what is your command? ");
         Command.find(scanner.next()).fire();
     }

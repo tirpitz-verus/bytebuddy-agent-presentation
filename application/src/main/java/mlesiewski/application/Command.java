@@ -1,12 +1,13 @@
 package mlesiewski.application;
 
+import java.io.InputStreamReader;
 import java.util.stream.Stream;
 
 import static java.util.stream.Collectors.toList;
 
 enum Command {
 
-    hello(new HelloActionImpl()),
+    hello(new HelloActionImpl(new InputStreamReader(System.in))),
 
     unknown(() -> System.out.println("command unknown - try one of " + Stream.of(Command.values()).collect(toList()))),
 
