@@ -6,13 +6,15 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) throws IOException {
-        System.out.println("Main class test");
         Scanner scanner = new Scanner(System.in);
-        String command = null;
-        while (!"exit".equals(command)) {
-            System.out.print("command: ");
-            command = scanner.next();
-            System.out.println("received: " + command);
+        while (true) {
+            runCommand(scanner);
         }
     }
+
+    private static void runCommand(Scanner scanner) {
+        System.out.print("what is your command? ");
+        Command.find(scanner.next()).fire();
+    }
+
 }
