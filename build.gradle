@@ -1,0 +1,8 @@
+group 'mlesiewski'
+version '1.0-SNAPSHOT'
+
+task runAll(type: Exec, dependsOn: ['application:assemble', 'agent:assemble']) {
+    commandLine 'java', '-javaagent:agent/build/libs/agent-1.0-SNAPSHOT.jar', '-jar', 'application/build/libs/application-1.0-SNAPSHOT.jar'
+}
+
+// java -javaagent:agent/build/libs/agent-1.0-SNAPSHOT.jar=wrotki -jar application/build/libs/application-1.0-SNAPSHOT.jar

@@ -1,0 +1,5 @@
+rootProject.name = 'jlabs-bytebuddy-presentation'
+
+include 'agent'
+include 'application'
+
